@@ -1,0 +1,826 @@
+/********** Template CSS **********/
+:root {
+  --primary: #d81324;
+  --secondary: #0b2154;
+  --light: #f2f2f2;
+  --dark: #111111;
+}
+
+.fw-medium {
+  font-weight: 600 !important;
+}
+
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 45px;
+  bottom: 45px;
+  z-index: 99;
+}
+
+/*** Spinner ***/
+#spinner {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+  z-index: 99999;
+}
+
+#spinner.show {
+  transition: opacity 0.5s ease-out, visibility 0s linear 0s;
+  visibility: visible;
+  opacity: 1;
+}
+
+/*** Button ***/
+.btn {
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+  color: #ffffff;
+}
+
+.btn-square {
+  width: 38px;
+  height: 38px;
+}
+
+.btn-sm-square {
+  width: 32px;
+  height: 32px;
+}
+
+.btn-lg-square {
+  width: 48px;
+  height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  border-radius: 2px;
+}
+
+/*** Navbar ***/
+.navbar .dropdown-toggle::after {
+  border: none;
+  content: "\f107";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+.navbar-light .navbar-nav .nav-link {
+  margin-right: 30px;
+  padding: 25px 0;
+  color: #ffffff;
+  font-size: 15px;
+  text-transform: uppercase;
+  outline: none;
+}
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--primary);
+}
+@media (max-width: 991.98px) {
+  .navbar-light .navbar-nav .nav-link {
+    margin-right: 0;
+    padding: 10px 0;
+  }
+  .navbar-light .navbar-nav {
+    border-top: 1px solid #eeeeee;
+  }
+}
+.navbar-light .navbar-brand,
+.navbar-light a.btn {
+  height: 75px;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: var(--dark);
+  font-weight: 500;
+}
+.navbar-light.sticky-top {
+  top: -100px;
+  transition: 0.5s;
+}
+@media (min-width: 992px) {
+  .navbar .nav-item .dropdown-menu {
+    display: block;
+    border: none;
+    margin-top: 0;
+    top: 150%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+  }
+  .navbar .nav-item:hover .dropdown-menu {
+    top: 100%;
+    visibility: visible;
+    transition: 0.5s;
+    opacity: 1;
+  }
+}
+/*** Header ***/
+.carousel-caption {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/*** About ***/
+
+.about-text {
+  flex: 1;
+}
+
+/* Add your existing text styles */
+.about-text h6 {
+  color: var(--primary); /* Adjust as needed */
+  text-transform: uppercase;
+}
+
+.about-text h1 {
+  margin-bottom: 20px;
+  font-size: 36px; /* Adjust as needed */
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  font-size: 16px; /* Adjust as needed */
+}
+
+.btn-primary {
+  padding: 10px 20px;
+  background-color: var(--primary); /* Button color */
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+@media (max-width: 768px) {
+  #header-carousel .carousel-item {
+    position: relative;
+    min-height: 450px;
+  }
+
+  #header-carousel .carousel-item img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.img-fluid {
+  position: relative;
+  bottom: 0; /* Reset bottom to default */
+  right: 0; /* Reset right to default */
+  transform: translate(0, 0); /* Reset transform to default */
+}
+
+.img-fluid1 {
+  position: absolute;
+  top: 5px;
+  bottom: 0; /* Reset bottom to default */
+  right: 0; /* Reset right to default */
+  max-width: 100%; /* Reset transform to default */
+  height: auto;
+}
+.page-header {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page-header-inner {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: var(--light);
+}
+
+/*** Facts ***/
+.fact {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(/img/Towing.jpeg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*** Service ***/
+.certificate-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 280px; /* Adjust this value to match your card width */
+  height: 279px; /* Match the height of your other cards */
+  margin: 0 auto;
+}
+
+.certificate-text h5 {
+  color: white; /* Change Ford heading color to white */
+}
+
+.certificate-container:hover {
+  transform: scale(1.05);
+}
+
+.certificate-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire container */
+}
+
+.certificate-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+}
+
+.certificate-container:hover .certificate-overlay {
+  height: 100%;
+}
+
+.certificate-text {
+  color: white;
+  font-size: 14px; /* Adjust font size */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+}
+
+.service .nav .nav-link {
+  background: var(--light);
+  transition: 0.5s;
+}
+
+.service .nav .nav-link.active {
+  background: var(--primary);
+}
+
+.service .nav .nav-link.active h4 {
+  color: #ffffff !important;
+}
+/* Add these rules to your existing CSS file */
+
+/*About section */
+.container-xxl {
+  margin-bottom: 50px; /* Add margin at the bottom to separate the image from the footer */
+}
+
+.footer {
+  padding-top: 50px; /* Ensure there is padding at the top of the footer */
+  z-index: 10; /* Ensure the footer is above other elements */
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+  background-size: cover;
+  padding-top: 50px; /* Add some padding to the top */
+  z-index: 10; /* Ensure the footer is above other elements */
+}
+
+/* Add this media query for responsiveness */
+@media (max-width: 991px) {
+  .position-relative.overflow-hidden.h-100,
+  .position-relative.overflow-hidden.h-100 img {
+    max-height: 400px; /* Adjust for smaller screens */
+  }
+}
+
+/* If you already have these classes defined, you may need to adjust or merge them */
+/*** Booking ***/
+.booking {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../img/footer.jpeg) center center no-repeat;
+  background-size: cover;
+}
+
+.bootstrap-datetimepicker-widget.bottom {
+  top: auto !important;
+}
+
+.bootstrap-datetimepicker-widget .table * {
+  border-bottom-width: 0px;
+}
+
+.bootstrap-datetimepicker-widget .table th {
+  font-weight: 500;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+  background: var(--primary);
+}
+
+.bootstrap-datetimepicker-widget table td.today::before {
+  border-bottom-color: var(--primary);
+}
+/* NEW CARD*/
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cads {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.cads_item {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  width: 33.3333%; /* 3 cads per row */
+  box-sizing: border-box;
+}
+
+.cad {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+}
+
+.cad:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cad_image {
+  position: relative;
+  max-height: 250px;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.cad_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cad_content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cad_title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.cad_text {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.cad_button {
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cad_button:hover {
+  background-color: #0056b3;
+}
+
+.cad_content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cad_content::-webkit-scrollbar-track {
+  box-shadow: 0;
+  border-radius: 0;
+}
+
+.cad_content::-webkit-scrollbar-thumb {
+  background: #e23737;
+  border-radius: 15px;
+}
+
+.cad_title {
+  position: relative;
+  margin: 0 0 24px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cad_title::after {
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #e23737;
+  content: "";
+}
+
+hr {
+  margin: 24px auto;
+  width: 50px;
+  border-top: 2px solid #e41717;
+}
+
+.cad_text p {
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cad_text p:last-child {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .cads_item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .cads_item {
+    width: 100%;
+  }
+}
+
+/*** Footer ***/
+.footer {
+  padding-top: 50px; /* Ensure there is padding at the top of the footer */
+  z-index: 10; /* Ensure the footer is above other elements */
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url(../img/footer.jpeg) center center no-repeat;
+  background-size: cover;
+  padding-top: 50px; /* Add some padding to the top */
+  z-index: 10; /* Ensure the footer is above other elements */
+}
+
+.footer .btn.btn-social {
+  margin-right: 5px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light);
+  border: 1px solid #ffffff;
+  border-radius: 35px;
+  transition: 0.3s;
+}
+
+.footer .btn.btn-social:hover {
+  color: var(--primary);
+}
+
+.footer .btn.btn-link {
+  display: block;
+  margin-bottom: 5px;
+  padding: 0;
+  text-align: left;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: normal;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+
+.footer .btn.btn-link::before {
+  position: relative;
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+  letter-spacing: 1px;
+  box-shadow: none;
+}
+
+.footer .copyright {
+  padding: 25px 0;
+  font-size: 15px;
+  border-top: 1px solid rgba(256, 256, 256, 0.1);
+}
+
+.footer .copyright a {
+  color: var(--light);
+}
+
+.footer .footer-menu a {
+  margin-right: 15px;
+  padding-right: 15px;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer .footer-menu a:last-child {
+  margin-right: 0;
+  padding-right: 0;
+  border-right: none;
+}
+/* Advertisement Video Section */
+.advert-section {
+  background-color: #f8f9fa;
+  overflow: hidden;
+}
+
+.fade-left,
+.fade-right {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.fade-left {
+  transform: translateX(-50px);
+}
+
+.fade-right {
+  transform: translateX(50px);
+}
+
+.fade-left.scrolled,
+.fade-right.scrolled {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 991px) {
+  .advert-section .col-lg-6:first-child {
+    margin-bottom: 2rem;
+  }
+}
+.unmute-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 10;
+  display: none; /* Hide by default */
+}
+
+.unmute-button.visible {
+  display: block; /* Show when needed */
+}
+
+/* Add these styles at the end of your CSS file */
+
+.mute-button,
+.unmute-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.unmute-button {
+  right: 10px; /* Adjust the position if needed */
+}
+
+.mute-button {
+  right: 90px; /* Adjust the position if needed to be next to the unmute button */
+}
+
+.unmute-button.visible,
+.mute-button.visible {
+  display: block;
+}
+
+.unmute-button.hidden,
+.mute-button.hidden {
+  display: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fafafa;
+}
+
+.wrapper {
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 20px;
+}
+
+.wrapper h1 {
+  font-size: 3em;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.wrapper > p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #6c757d;
+  max-width: 600px;
+}
+
+.content-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+.card {
+  height: 250px;
+  width: 280px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fff;
+  margin: 15px;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      45deg,
+      rgba(255, 28, 8, 0.5) 0%,
+      rgba(255, 0, 82, 0.5) 100%
+    ),
+    url("/WebCon/img/mechanic.jpg") center/cover no-repeat;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card i {
+  font-size: 50px;
+  margin-bottom: 15px;
+  color: #f55c5c;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.card h2 {
+  font-size: 1.2em;
+  margin-bottom: 12px;
+  font-weight: 500;
+  text-align: center;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.card p {
+  color: #6c757d;
+  text-align: center;
+  font-size: 0.9em;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .card:hover i,
+  .card:hover p,
+  .card:hover h2 {
+    color: #fff;
+  }
+}
+
+@media (hover: none) or (pointer: coarse) {
+  .card:active::before {
+    opacity: 1;
+  }
+
+  .card:active i,
+  .card:active p,
+  .card:active h2 {
+    color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
